@@ -13,8 +13,6 @@
     <!--引入three.js三维引擎-->
     <!-- !!!three的所有拓展必须和three的版本一致 -->
     <script src="./three.js/build/three.js"></script>
-    <!-- <script src="./three.js"></script> -->
-    <!-- <script src="http://www.yanhuangxueyuan.com/threejs/build/three.js"></script> -->
     <script src="./three.js/examples/js/controls/OrbitControls.js"></script>
   </head>
 
@@ -39,6 +37,13 @@
       }) //材质对象Material
       var mesh1 = new THREE.Mesh(geometry1, material1) //网格模型对象Mesh
       scene.add(mesh1) //网格模型添加到场景中
+
+      var sphereMaterial = new THREE.MeshLambertMaterial({
+        color: 0xff0000,
+        opacity: 0.7,
+        transparent: true,
+      }) //材质对象
+      scene.add(sphereMaterial)
 
       // 球体网格模型
       var geometry2 = new THREE.SphereGeometry(60, 40, 40)
